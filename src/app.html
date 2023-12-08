@@ -18,6 +18,7 @@
 			// For some reason, Sveltekit doesn't let us load env variables from .env here, so we load it from hooks.server.ts
 			window.gaId = "%gaId%";
 		</script>
+		<title>HuggingChat</title>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover" class="h-full dark:bg-gray-900">
@@ -35,6 +36,7 @@
 				function gtag() {
 					dataLayer.push(arguments);
 				}
+				gtag("config", window.gaId);
 				gtag("js", new Date());
 				/// ^ See https://developers.google.com/tag-platform/gtagjs/install
 				gtag("config", window.gaId);
